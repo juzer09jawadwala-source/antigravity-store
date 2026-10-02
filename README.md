@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+# 📱 Antigravity Store - iPhone 18 Pro Experience
 
-First, run the development server:
+<a href="https://antigravity-store-ten.vercel.app">
+  <img src="public/siri-ai-hero-trans.webp" alt="iPhone 18 Pro Siri Intelligence" width="800" style="max-width: 100%; drop-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.5); margin: 20px 0; border-radius: 12px;"/>
+</a>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+*A breathtaking, high-performance eCommerce landing page inspired by Apple's premium design language. Completely lag-free, hyper-optimized, and built for the future.*
+
+<br />
+
+<!-- Dynamic GitHub Badges (Will populate once pushed to GitHub) -->
+[![GitHub Repo stars](https://img.shields.io/github/stars/YOUR_USERNAME/antigravity-store?style=for-the-badge&color=yellow)](https://github.com/YOUR_USERNAME/antigravity-store/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/YOUR_USERNAME/antigravity-store?style=for-the-badge&color=white)](https://github.com/YOUR_USERNAME/antigravity-store/network/members)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/YOUR_USERNAME/antigravity-store?style=for-the-badge&color=orange)](https://github.com/YOUR_USERNAME/antigravity-store/pulls)
+[![GitHub issues](https://img.shields.io/github/issues/YOUR_USERNAME/antigravity-store?style=for-the-badge&color=red)](https://github.com/YOUR_USERNAME/antigravity-store/issues)
+[![GitHub license](https://img.shields.io/github/license/YOUR_USERNAME/antigravity-store?style=for-the-badge&color=brightgreen)](https://github.com/YOUR_USERNAME/antigravity-store/blob/main/LICENSE)
+[![Vercel Deployment](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://antigravity-store-ten.vercel.app)
+
+<!-- Tech Stack Badges -->
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](#)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](#)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](#)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)](#)
+
+<br />
+
+### 🔗 [View Live Demo](https://antigravity-store-ten.vercel.app)
+
+</div>
+
+---
+
+## ✨ Features
+
+- **Apple-Grade Visuals:** Meticulously crafted layouts mirroring the premium, dark-mode-first design language of modern tech giants.
+- **Lightning Fast Performance:** A 55MB+ asset payload completely optimized and converted to lightweight `WebP`, delivering a visually stunning site with zero scroll lag.
+- **Seamless Integrations:**
+  - Siri / Apple Intelligence Hero showcase with flawless alpha-masking.
+  - Vapor Chamber graphics with AI-assisted background removal and CSS radial blending.
+  - Edge-to-edge full-width product imagery.
+- **Fluid Animations:** Component-level scroll triggers, parallax carousels, and smooth reveals using Framer Motion and Tailwind.
+- **Mobile First:** Responsive grids and text scaling ensuring the "pro" experience translates perfectly to any screen size.
+
+## 🛠 Tech Stack
+
+- **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Deployment:** [Vercel](https://vercel.com/)
+- **Image Optimization:** Python (Pillow, rembg) for Next-Gen `WebP` compression
+
+## 🚀 Getting Started
+
+To run this project locally, follow these steps:
+
+### Prerequisites
+
+- Node.js 18.17 or later
+- npm, yarn, or pnpm
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/antigravity-store.git
+   cd antigravity-store
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 📂 Project Structure
+
+```text
+antigravity-store/
+├── app/                  # Next.js App Router and main pages
+├── components/           # Reusable UI components
+│   ├── sections/         # Major page sections (Hero, SiriAi, VaporChamber, etc.)
+│   └── ui/               # Granular interactive components (Carousels, Cards)
+├── public/               # Highly optimized WebP assets
+└── styles/               # Global CSS and Tailwind configurations
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📈 Performance Journey
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+During development, the site underwent a massive performance audit. Over 50MB of heavy uncompressed product images (PNG/JPG) were batch-converted to `WebP` and wrapped in `next/image` attributes and native lazy loading. 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Additionally, custom AI scripts (`rembg`) were used to isolate product graphics (like the Siri orb and internal Vapor Chamber) to allow seamless `#000000` blending via CSS `mask-image`, removing ugly clipping boxes entirely.
 
-## Learn More
+## 🤝 Contributing
 
-To learn more about Next.js, take a look at the following resources:
+Contributions, issues and feature requests are welcome!
+Feel free to check [issues page](https://github.com/YOUR_USERNAME/antigravity-store/issues). 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is [MIT](LICENSE) licensed.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+<div align="center">
+  <sub>Built with ❤️ by the Antigravity Team.</sub>
+</div>

@@ -13,7 +13,6 @@ type ModelData = {
   isNew: boolean;
   name: string;
   tagline: string;
-  price: string;
   colors: string[];
   image: string;
   specs: Record<string, SpecData>;
@@ -24,7 +23,6 @@ const MODELS: ModelData[] = [
     isNew: true,
     name: "iPhone Duo",
     tagline: "The largest display of any iPhone. Foldable. Powerful. And durable.",
-    price: "From ₹1,99,900.00*",
     colors: ["#3b3b3e", "#e3e5e3", "#d4c8b6"],
     image: "/iphone-card-40-duo-202609.webp",
     specs: {
@@ -86,9 +84,8 @@ const MODELS: ModelData[] = [
     isNew: true,
     name: "iPhone 18 Pro",
     tagline: "A big leap in battery life, performance and camera of any iPhone.",
-    price: "From ₹1,19,900.00*",
     colors: ["#4a3b3e", "#3b3b3e", "#e3e5e3", "#d4c8b6"],
-    image: "/burgundy/trans_18-pro-burgundy-full.png",
+    image: "/burgundy/trans_18-pro-burgundy-full.webp",
     specs: {
       screen: {
         icon: <Smartphone className="w-8 h-8 mb-4" strokeWidth={1} />,
@@ -148,7 +145,6 @@ const MODELS: ModelData[] = [
     isNew: true,
     name: "iPhone Air",
     tagline: "Incredibly light and thin with pro performance.",
-    price: "From ₹1,19,900.00*",
     colors: ["#a1b5c9", "#3b3b3e", "#e3e5e3"],
     image: "/air.webp",
     specs: {
@@ -210,7 +206,6 @@ const MODELS: ModelData[] = [
     isNew: false,
     name: "iPhone 17",
     tagline: "Powerful, durable and delightful.",
-    price: "From ₹79,900.00*",
     colors: ["#c5b5d8", "#b6d1c7", "#f3e1d1", "#e3e5e3", "#3b3b3e"],
     image: "/17.webp",
     specs: {
@@ -272,7 +267,6 @@ const MODELS: ModelData[] = [
     isNew: false,
     name: "iPhone 17e",
     tagline: "Feature-packed. Value packed.",
-    price: "From ₹49,900.00*",
     colors: ["#f2cfd4", "#e3e5e3", "#3b3b3e"],
     image: "/17e.webp",
     specs: {
@@ -349,7 +343,7 @@ export default function CompareModels() {
               
               {/* Product Header */}
               <div className="h-[250px] lg:h-[300px] flex items-end justify-center mb-6">
-                <img 
+                <img loading="lazy" decoding="async" 
                 src={model.image}
                   alt={model.name} 
                   className="h-full object-contain drop-shadow-2xl hover:scale-105 transition-transform" 
@@ -372,7 +366,6 @@ export default function CompareModels() {
                 )}
                 <h3 className="text-[24px] font-semibold text-white mb-2">{model.name}</h3>
                 <p className="text-[13px] text-gray-300 leading-relaxed mb-4 px-2">{model.tagline}</p>
-                <p className="text-[13px] text-gray-400 mt-auto mb-6">{model.price}</p>
               </div>
               
               <div className="w-full h-px bg-[#424245] my-6" />
@@ -403,7 +396,7 @@ export default function CompareModels() {
           {MODELS.map((model, idx) => (
             <div key={idx} className="flex flex-col items-center text-center border-b border-[#424245] pb-12">
               <div className="h-[250px] flex items-end justify-center mb-6">
-                <img 
+                <img loading="lazy" decoding="async" 
                 src={model.image}
                   alt={model.name} 
                   className="h-full object-contain drop-shadow-2xl" 
@@ -412,7 +405,6 @@ export default function CompareModels() {
               {model.isNew && <span className="text-[#bf4800] text-xs font-semibold mb-2">New</span>}
               <h3 className="text-[24px] font-semibold text-white mb-2">{model.name}</h3>
               <p className="text-[13px] text-gray-300 mb-4">{model.tagline}</p>
-              <p className="text-[13px] text-gray-400 mb-6">{model.price}</p>
               
               <div className="grid grid-cols-2 gap-8 w-full mt-6">
                 {Object.keys(model.specs).map((specKey, i) => {
