@@ -11,11 +11,11 @@
 <br />
 
 <!-- Dynamic GitHub Badges (Will populate once pushed to GitHub) -->
-[![GitHub Repo stars](https://img.shields.io/github/stars/YOUR_USERNAME/antigravity-store?style=for-the-badge&color=yellow)](https://github.com/YOUR_USERNAME/antigravity-store/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/YOUR_USERNAME/antigravity-store?style=for-the-badge&color=white)](https://github.com/YOUR_USERNAME/antigravity-store/network/members)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/YOUR_USERNAME/antigravity-store?style=for-the-badge&color=orange)](https://github.com/YOUR_USERNAME/antigravity-store/pulls)
-[![GitHub issues](https://img.shields.io/github/issues/YOUR_USERNAME/antigravity-store?style=for-the-badge&color=red)](https://github.com/YOUR_USERNAME/antigravity-store/issues)
-[![GitHub license](https://img.shields.io/github/license/YOUR_USERNAME/antigravity-store?style=for-the-badge&color=brightgreen)](https://github.com/YOUR_USERNAME/antigravity-store/blob/main/LICENSE)
+[![GitHub Repo stars](https://img.shields.io/github/stars/juzer09jawadwala-source/antigravity-store?style=for-the-badge&color=yellow)](https://github.com/juzer09jawadwala-source/antigravity-store/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/juzer09jawadwala-source/antigravity-store?style=for-the-badge&color=white)](https://github.com/juzer09jawadwala-source/antigravity-store/network/members)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/juzer09jawadwala-source/antigravity-store?style=for-the-badge&color=orange)](https://github.com/juzer09jawadwala-source/antigravity-store/pulls)
+[![GitHub issues](https://img.shields.io/github/issues/juzer09jawadwala-source/antigravity-store?style=for-the-badge&color=red)](https://github.com/juzer09jawadwala-source/antigravity-store/issues)
+[![GitHub license](https://img.shields.io/github/license/juzer09jawadwala-source/antigravity-store?style=for-the-badge&color=brightgreen)](https://github.com/juzer09jawadwala-source/antigravity-store/blob/main/LICENSE)
 [![Vercel Deployment](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://antigravity-store-ten.vercel.app)
 
 <!-- Tech Stack Badges -->
@@ -65,7 +65,7 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/antigravity-store.git
+   git clone https://github.com/juzer09jawadwala-source/antigravity-store.git
    cd antigravity-store
    ```
 
@@ -106,7 +106,7 @@ Additionally, custom AI scripts (`rembg`) were used to isolate product graphics 
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
-Feel free to check [issues page](https://github.com/YOUR_USERNAME/antigravity-store/issues). 
+Feel free to check [issues page](https://github.com/juzer09jawadwala-source/antigravity-store/issues). 
 
 ## 📝 License
 
