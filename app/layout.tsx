@@ -17,13 +17,18 @@ export const metadata: Metadata = {
   description: "Get authentic, sealed Apple devices direct from Dubai with guaranteed customs clearance and worldwide warranty.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+import SiriAssistant from "../components/SiriAssistant";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <SiriAssistant />
+      </body>
     </html>
   );
 }
