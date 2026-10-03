@@ -6,6 +6,7 @@ import UltimateUpgrade from "../components/sections/UltimateUpgrade";
 import VaporChamberSection from "../components/sections/VaporChamberSection";
 import ProductShowcase from "../components/sections/ProductShowcase";
 import FullWidthImageSection from "../components/sections/FullWidthImageSection";
+import AccessoriesSection from "../components/sections/AccessoriesSection";
 import OrderSummary from "../components/sections/OrderSummary";
 import WhatsInTheBox from "../components/sections/WhatsInTheBox";
 import TrustHub from "../components/sections/TrustHub";
@@ -27,6 +28,7 @@ export default function Home() {
       <VaporChamberSection />
       <ProductShowcase />
       <FullWidthImageSection />
+      <AccessoriesSection />
       <OrderSummary />
       <WhatsInTheBox />
       <TrustHub />
