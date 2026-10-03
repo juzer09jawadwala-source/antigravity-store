@@ -1,13 +1,13 @@
-// @ts-nocheck
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { useChat } from "@ai-sdk/react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function SiriAssistant() {
   const [isOpen, setIsOpen] = useState(false);
-  const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat();
+  const [messages, setMessages] = useState<{id: string, role: string, content: string}[]>([]);
+  const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // Auto-scroll to bottom when new messages arrive
@@ -16,6 +16,53 @@ export default function SiriAssistant() {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim() || isLoading) return;
+
+    const userMsg = { id: Date.now().toString(), role: "user", content: input.trim() };
+    const newMessages = [...messages, userMsg];
+    
+    setMessages(newMessages);
+    setInput("");
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: newMessages }),
+      });
+
+      if (!response.ok) throw new Error("API Error");
+      if (!response.body) throw new Error("No body");
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+
+      let assistantMsg = { id: (Date.now() + 1).toString(), role: "assistant", content: "" };
+      setMessages([...newMessages, assistantMsg]);
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        
+        const chunk = decoder.decode(value, { stream: true });
+        assistantMsg.content += chunk;
+        
+        setMessages((prev) => {
+          const updated = [...prev];
+          updated[updated.length - 1] = { ...assistantMsg };
+          return updated;
+        });
+      }
+    } catch (error) {
+      console.error("Chat error:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <>
@@ -98,7 +145,7 @@ export default function SiriAssistant() {
                 </div>
               ))}
               
-              {isLoading && (
+              {isLoading && messages[messages.length - 1]?.role === "user" && (
                 <div className="flex justify-start">
                   <div className="bg-white/10 text-[#f5f5f7] rounded-2xl rounded-bl-sm px-5 py-4 backdrop-blur-md flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-white/50 animate-bounce" style={{ animationDelay: '0ms' }} />
@@ -115,7 +162,7 @@ export default function SiriAssistant() {
               <form onSubmit={handleSubmit} className="relative flex items-center">
                 <input
                   value={input}
-                  onChange={handleInputChange}
+                  onChange={(e) => setInput(e.target.value)}
                   placeholder="Ask about iPhone 18 Pro..."
                   className="w-full bg-white/5 border border-white/10 rounded-full pl-6 pr-12 py-4 text-[#f5f5f7] placeholder:text-[#86868b] focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all"
                 />
