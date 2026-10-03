@@ -10,7 +10,7 @@ import OrderSummary from "../components/sections/OrderSummary";
 import WhatsInTheBox from "../components/sections/WhatsInTheBox";
 import TrustHub from "../components/sections/TrustHub";
 import IncludedServices from "../components/sections/IncludedServices";
-import CompareModels from "../components/sections/CompareModels";
+import AiMatchmaker from "../components/sections/AiMatchmaker";
 import IPhoneCarouselSection from "../components/sections/IPhoneCarouselSection";
 import Footer from "../components/Footer";
 
@@ -30,7 +30,7 @@ export default function Home() {
       <WhatsInTheBox />
       <TrustHub />
       <IncludedServices />
-      <CompareModels />
+      <AiMatchmaker />
       <IPhoneCarouselSection />
       <Footer />
     </main>

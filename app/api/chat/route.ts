@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { customOpenAI } from '@/lib/ai';
 import { streamText } from 'ai';
 
 // Allow responses up to 30 seconds
@@ -29,7 +29,7 @@ export async function POST(req: Request) {
     const { messages } = await req.json();
 
     const result = await streamText({
-      model: openai('gpt-4o-mini'), 
+      model: customOpenAI('gpt-4o-mini'), 
       system: SYSTEM_PROMPT,
       messages,
     });

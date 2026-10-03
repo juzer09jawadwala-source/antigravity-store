@@ -3,7 +3,7 @@ import { Truck, ShoppingBag, Bookmark } from "lucide-react";
 
 export default function OrderSummary() {
   return (
-    <section className="bg-[#f5f5f7] w-full pt-16 overflow-hidden">
+    <section id="order-summary" className="bg-[#f5f5f7] w-full pt-16 overflow-hidden scroll-mt-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           
