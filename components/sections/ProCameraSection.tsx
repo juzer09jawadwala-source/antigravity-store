@@ -58,9 +58,9 @@ export default function ProCameraSection() {
           </h2>
           
           {/* Hero Image */}
-          <div className="relative w-full max-w-[1200px] mx-auto mb-16 rounded-[2.5rem] overflow-hidden bg-[#111]">
+          <div className="relative w-full max-w-[1200px] mx-auto mb-16 rounded-[2.5rem] overflow-hidden">
             <img 
-              src="/black/18-pro-black-close-up.webp" 
+              src="/black/trans_18-pro-black-close-up.webp" 
               alt="iPhone Pro Camera System Close-up" 
               className="w-full h-auto object-cover max-h-[80vh] object-center"
             />
