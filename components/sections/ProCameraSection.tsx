@@ -53,11 +53,20 @@ export default function ProCameraSection() {
           <p className="text-sm md:text-base font-semibold text-[#86868b] tracking-normal mb-3 md:mb-4">
             Pro camera system
           </p>
-          <h2 className="text-[3.5rem] sm:text-7xl md:text-[6rem] lg:text-[7rem] font-semibold tracking-tighter text-[#f5f5f7] leading-[1.05] mb-8">
+          <h2 className="text-[3.5rem] sm:text-7xl md:text-[6rem] lg:text-[7rem] font-semibold tracking-tighter text-[#f5f5f7] leading-[1.05] mb-12">
             Eye-opening control.
           </h2>
           
-          <div className="max-w-[980px] mx-auto text-center mb-16">
+          {/* Hero Image */}
+          <div className="relative w-full max-w-[1200px] mx-auto mb-16 rounded-[2.5rem] overflow-hidden bg-[#111]">
+            <img 
+              src="/black/18-pro-black-close-up.webp" 
+              alt="iPhone Pro Camera System Close-up" 
+              className="w-full h-auto object-cover max-h-[80vh] object-center"
+            />
+          </div>
+
+          <div className="max-w-[980px] mx-auto text-center mb-16 px-4">
             <p className="text-[1.3rem] sm:text-2xl md:text-[1.75rem] font-semibold tracking-tight text-[#86868b] leading-[1.15]">
               Meet our <span className="text-[#f5f5f7]">best-ever camera system for pros and creators</span>. iPhone 18 Pro breaks new ground with a variable aperture on the 48MP Fusion Main camera, delivering better <span className="whitespace-nowrap">low-light</span> photos and video and sharper detail throughout the scene. And with new Pro controls and Photographic Styles 3 to adjust texture and grain, you’ll have even more creative range.
             </p>
