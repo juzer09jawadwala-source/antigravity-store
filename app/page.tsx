@@ -4,6 +4,7 @@ import KeyHighlights from "../components/sections/KeyHighlights";
 import SiriAiSection from "../components/sections/SiriAiSection";
 import UltimateUpgrade from "../components/sections/UltimateUpgrade";
 import VaporChamberSection from "../components/sections/VaporChamberSection";
+import ProCameraSection from "../components/sections/ProCameraSection";
 import ProductShowcase from "../components/sections/ProductShowcase";
 import FullWidthImageSection from "../components/sections/FullWidthImageSection";
 import AccessoriesSection from "../components/sections/AccessoriesSection";
@@ -26,6 +27,7 @@ export default function Home() {
       <KeyHighlights />
       <UltimateUpgrade />
       <VaporChamberSection />
+      <ProCameraSection />
       <ProductShowcase />
       <FullWidthImageSection />
       <AccessoriesSection />
