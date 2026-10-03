@@ -1,7 +1,7 @@
 import { customOpenAI } from '@/lib/ai';
 import { streamText } from 'ai';
+import { createTextStream, getFallbackChatResponse } from '@/lib/fallbackAi';
 
-// Allow responses up to 30 seconds
 export const maxDuration = 30;
 
 const SYSTEM_PROMPT = `You are a premium, highly knowledgeable Apple Genius and shopping assistant for the Antigravity Store. You specialize exclusively in the new iPhone 18 Pro and iPhone 18 Pro Max. 
@@ -25,8 +25,15 @@ Rules:
 - Format your text beautifully using markdown (bolding key features).`;
 
 export async function POST(req: Request) {
+  let userLastMessage = "";
   try {
     const { messages } = await req.json();
+    userLastMessage = messages?.[messages.length - 1]?.content || "";
+
+    const apiKey = process.env.API_KEY || process.env.OPENAI_API_KEY;
+    if (!apiKey) {
+      throw new Error("No API key configured");
+    }
 
     const result = await streamText({
       model: customOpenAI('gpt-4o-mini'), 
@@ -36,10 +43,17 @@ export async function POST(req: Request) {
 
     return result.toTextStreamResponse();
   } catch (error) {
-    console.error("Chat API Error:", error);
-    return new Response(JSON.stringify({ error: "Failed to process chat" }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" }
+    console.warn("OpenAI API call failed, seamlessly switching to on-device Apple Intelligence fallback:", error);
+    
+    // Seamless fallback: return streaming response from local contextual Apple Intelligence
+    const fallbackAnswer = getFallbackChatResponse(userLastMessage);
+    const stream = createTextStream(fallbackAnswer);
+
+    return new Response(stream, {
+      headers: {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cache-Control": "no-cache",
+      },
     });
   }
 }

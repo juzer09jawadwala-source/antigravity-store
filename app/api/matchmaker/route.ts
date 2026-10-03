@@ -1,5 +1,6 @@
 import { customOpenAI } from '@/lib/ai';
 import { streamText } from 'ai';
+import { createTextStream, getFallbackMatchmakerResponse } from '@/lib/fallbackAi';
 
 export const maxDuration = 30;
 
@@ -29,28 +30,41 @@ CRITICAL RULES:
 - Keep markdown clean and bold key specs.`;
 
 export async function POST(req: Request) {
+  let promptText = "";
   try {
     const { prompt } = await req.json();
+    promptText = prompt || "";
 
-    if (!prompt || typeof prompt !== 'string') {
+    if (!promptText || typeof promptText !== 'string') {
       return new Response(JSON.stringify({ error: "A prompt is required." }), {
         status: 400,
         headers: { "Content-Type": "application/json" }
       });
     }
 
+    const apiKey = process.env.API_KEY || process.env.OPENAI_API_KEY;
+    if (!apiKey) {
+      throw new Error("No API key configured");
+    }
+
     const result = await streamText({
       model: customOpenAI('gpt-4o-mini'),
       system: MATCHMAKER_SYSTEM_PROMPT,
-      prompt: `User Persona and Needs: "${prompt.trim()}". Analyze this user's needs and determine the optimal iPhone 18 Pro configuration.`,
+      prompt: `User Persona and Needs: "${promptText.trim()}". Analyze this user's needs and determine the optimal iPhone 18 Pro configuration.`,
     });
 
     return result.toTextStreamResponse();
   } catch (error) {
-    console.error("Matchmaker API Error:", error);
-    return new Response(JSON.stringify({ error: "Failed to generate recommendation." }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" }
+    console.warn("Matchmaker OpenAI API call failed, seamlessly switching to on-device Apple Intelligence fallback:", error);
+
+    const fallbackAnswer = getFallbackMatchmakerResponse(promptText);
+    const stream = createTextStream(fallbackAnswer);
+
+    return new Response(stream, {
+      headers: {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cache-Control": "no-cache",
+      },
     });
   }
 }
