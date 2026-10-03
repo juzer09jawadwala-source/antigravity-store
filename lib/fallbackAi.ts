@@ -44,8 +44,12 @@ export function getFallbackChatResponse(userMessage: string): string {
     return "The **iPhone 18 Pro** features a 6.3-inch Super Retina XDR ProMotion display, perfect for one-handed agility. The **iPhone 18 Pro Max** expands to a stunning 6.9-inch canvas with the longest battery life ever in an iPhone (up to 34 hours). Both share identical A20 Pro silicon, Vapor Chamber cooling, and 48MP pro camera arrays.";
   }
 
+  if (q.includes("contact") || q.includes("whatsapp") || q.includes("phone") || q.includes("email") || q.includes("support") || q.includes("call")) {
+    return "You can connect directly with **JOON STORES Dub-Ind** VIP Concierge on WhatsApp at **+91 9167868179** or by email at **juzer09jawadwala@gmail.com**. Our dedicated team is available to assist with direct Dubai to India orders, customs verification, and expedited delivery.";
+  }
+
   if (q.includes("price") || q.includes("cost") || q.includes("buy") || q.includes("order")) {
-    return "You can select and configure your desired iPhone 18 Pro model, finish, and storage tier directly right here in the **Order Summary** and **Showcase** sections on this page.";
+    return "You can select and configure your desired iPhone 18 Pro model, finish, and storage tier directly right here in the **Order Summary** and **Showcase** sections on this page. For direct assistance, message us on WhatsApp at **+91 9167868179**.";
   }
 
   return "The **iPhone 18 Pro** represents our greatest leap in mobile engineering. Powered by the **A20 Pro silicon**, an all-new **laser-welded Vapor Chamber cooling system**, and deeply integrated **Apple Intelligence**, it is built to handle your most demanding creative and computational workflows with effortless speed.";

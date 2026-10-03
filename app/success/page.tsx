@@ -19,8 +19,8 @@ function SuccessContent() {
     return () => clearInterval(timer);
   }, []);
 
-  const merchantPhone = process.env.NEXT_PUBLIC_MERCHANT_WHATSAPP || "919999999999";
-  const whatsappText = `Hi! I just reserved my ${model} (${storage}, ${color}). My Order ID is ${orderId}. Please confirm my shipment from Dubai.`;
+  const merchantPhone = process.env.NEXT_PUBLIC_MERCHANT_WHATSAPP || "919167868179";
+  const whatsappText = `Hi JOON STORES! I just reserved my ${model} (${storage}, ${color}). My Order ID is ${orderId}. Please confirm my shipment.`;
   const whatsappUrl = `https://wa.me/${merchantPhone}?text=${encodeURIComponent(whatsappText)}`;
 
   const handleCopy = () => {

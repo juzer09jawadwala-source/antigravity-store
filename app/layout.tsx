@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import SiriAssistant from "../components/SiriAssistant";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,11 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nexus Electronics | Direct Dubai Imports",
-  description: "Get authentic, sealed Apple devices direct from Dubai with guaranteed customs clearance and worldwide warranty.",
+  title: "JOON STORES Dub-Ind | iPhone 18 Pro",
+  description: "Authentic sealed Apple devices with direct Dubai to India logistics, worldwide warranty, and dedicated WhatsApp concierge.",
 };
-
-import SiriAssistant from "../components/SiriAssistant";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
